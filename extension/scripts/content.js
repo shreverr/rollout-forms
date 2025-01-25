@@ -3,12 +3,21 @@ chrome.runtime.onMessage.addListener(async function (request, sender, sendRespon
 
   if (request.action === "addScript") {
     console.log("Received data from popup:", request.api);
-    const isUpdated = await addAPI(request.api)
-    console.log("isUpdated", isUpdated);
-    sendResponse({ success: isUpdated });
-    return true
+    try {
+      const isUpdated = await addAPI(request.api);
+      console.log("isUpdated", isUpdated);
+      (async () => {
+        const response = await chrome.runtime.sendMessage({ success: isUpdated, action: 'status' });
+        console.log(response);
+      })();
+    } catch (error) {
+      console.error("Error in addAPI:", error);
+      (async () => {
+        const response = await chrome.runtime.sendMessage({ success: false, action: 'status' });
+        console.log(response);
+      })();
+    }
   }
-  return true
 });
 
 const BASE_URL = "https://rollout.site";
