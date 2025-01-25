@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "rollout-email",
+  "version": "0.0.1",
+  "description": "Rollout email service",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://rollout.site/*"
+  ],
+  "author": "Shreshth Verma",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://rollout.site/projects/*/edit"
+      ],
+      "js": [
+        "./scripts/content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Rollout Forms",
+    "default_icon": {
+      "16": "assets/logo16.png",
+      "48": "assets/logo48.png",
+      "128": "assets/logo128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/logo16.png",
+    "48": "assets/logo48.png",
+    "128": "assets/logo128.png"
+  }
+}

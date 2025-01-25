@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+    />
+    <title>Rollout Forms</title>
+  </head>
+  <body
+    class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4 w-96"
+  >
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+      <img
+        src="./assets/logo512.png"
+        alt="Rollout Forms Logo"
+        class="mx-auto w-16 mb-4"
+      />
+      <h1 class="text-3xl font-bold text-center mb-4 text-purple-400">
+        Rollout Forms
+      </h1>
+      <h2 class="text-xl font-semibold text-center mb-6 text-gray-300">
+        Add your API endpoint
+      </h2>
+      <form id="api-form" action="" class="space-y-6">
+        <div>
+          <label for="api-text" class="block text-sm font-medium text-gray-400"
+            >API Endpoint</label
+          >
+          <input
+            type="url"
+            name="API Endpoint"
+            id="api-text"
+            placeholder="https://rollout-forms.site/xxx-xxx-xxx"
+            class="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
+        <button
+          type="submit"
+          id="submit-button"
+          class="w-full px-4 py-2 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        >
+          Add to Website
+        </button>
+      </form>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
