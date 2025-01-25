@@ -4,10 +4,11 @@ chrome.runtime.onMessage.addListener(async function (request, sender, sendRespon
   if (request.action === "addScript") {
     console.log("Received data from popup:", request.api);
     const isUpdated = await addAPI(request.api)
+    console.log("isUpdated", isUpdated);
     sendResponse({ success: isUpdated });
-
     return true
   }
+  return true
 });
 
 const BASE_URL = "https://rollout.site";
